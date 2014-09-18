@@ -1,0 +1,22 @@
+<html>
+{% if object_list %}
+<table>
+ <thead>
+   <tr>
+     <th>Id</th>
+     <th>Nome</th>
+   </tr>
+ </thead>
+ <tbody>
+   {% for object in object_list %}
+   <tr>
+     <td>{{ object.id }}</td>
+     <td>{{ object.describ }}</td>
+   </tr>
+   {% endfor %}
+ </tbody>
+</table>
+{% else %}
+<p>Sem registros para listar</p>
+{% endif %}
+</html>
