@@ -7,6 +7,7 @@ urlpatterns = patterns('',
 	url(r'^$', views.index, name='index'),
 	# Categoria
 	url(r'^listarcategorias', views.ListarCategorias.as_view()),
+	url(r'^cadastrarcategoria', views.categoria),
 	# Produto
 	url(r'^listarprodutos', views.ListarProdutos.as_view()),
 	# Lista
