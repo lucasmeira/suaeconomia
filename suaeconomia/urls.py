@@ -11,5 +11,6 @@ urlpatterns = patterns('',
     url(r'^$', views.index, name='index_suaeconomia'),
     url(r'^lista/', include('lista.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^proj/', include('proj.urls')),
     
 )

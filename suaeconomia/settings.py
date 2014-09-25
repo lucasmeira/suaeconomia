@@ -30,6 +30,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'suaeconomia',
     'lista',
+    'proj',
 )
 
 MIDDLEWARE_CLASSES = (
