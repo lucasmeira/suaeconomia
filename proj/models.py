@@ -20,7 +20,7 @@ class Produto(models.Model):
 class Lista(models.Model):
 	#listagem
 	#produtos
-	pass
+    produto = models.ManyToManyField(Produto, related_name='Cotacao')
 
 class Listagem(models.Model):
 	#lista
