@@ -1,6 +1,10 @@
 <h1>Pg Painel Cliente</h1>
-<form method="POST">
-    {% csrf_token %}
+
+<form action="" method="POST">
     {{ form.as_p }}
-    <input type='submit' value="Registrar"/>
+    <input type="submit" value="Cadastrar">
 </form>
+<br />
+<h3>Adicionar um data table para aparecer os produtos que coincidirem com a  procura.</h3>
+<h3>As procuras que estiverem marcadas colocar para aparecer um chekin de que ja foi escolhido
+    e se clicar novamente, deve ser desmarcado a opção.</h3>

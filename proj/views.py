@@ -1,17 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
-from django.shortcuts import render_to_response
-from django.shortcuts import get_object_or_404
-from django.shortcuts import redirect
-from django.http import HttpResponse
-from django.http import Http404
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, render_to_response, get_object_or_404, redirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.db.models import get_model
-from django.views.generic import ListView
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic import ListView
 from django.forms.models import modelformset_factory
-from proj.models import Lista
+from proj.models import Lista, Produto
+from proj.forms import ProdutoForm
 
 #from lista.models import Categoria
 #from lista.forms import CategoriaForm

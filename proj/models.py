@@ -20,6 +20,7 @@ class Produto(models.Model):
         return self.descricao + ' ' +  self.fabricante
 
 class Lista(models.Model):
+    nome = models.CharField(max_length=40, verbose_name="Nome", default='Nome da Lista')
     produto = models.ManyToManyField(Produto, related_name='lista+')
 
     @property
