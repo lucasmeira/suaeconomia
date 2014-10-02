@@ -56,7 +56,12 @@ def criarLista(request):
 
 #  Adiciona o produto a lista do cliente
 def addProdLista(request):
-    return render(request, 'proj/addprodutolista.html')
+    ListaForm = modelformset_factory(Lista)
+    if request.method == 'POST':
+        form = ListaForm(request.POST)
+        object_list = Lista.objects.all()
+    return render_to_response('proj/addprodutolista.html', {"form": form,
+                                                            "object_list": object_list})
 
 
 # Redirects views

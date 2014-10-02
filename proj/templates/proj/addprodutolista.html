@@ -1,8 +1,29 @@
 <h1>Pg Add Produto Lista</h1>
 <form id="search-produto" action="" method="POST">
-    <p>
-        <label for="nome-produto">Produto:</label>
-        <input id="nome-produto" name="nome-produto" type="text" value="" />
-    </p>
     <input type="submit" value="Procurar"/>
 </form>
+
+{% if object_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descrição</th>
+                <th>Fabricante</th>
+                <th>Cod. de Barra</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for object in object_list %}
+                <tr>
+                    <td>{{ object.id }}</td>
+                    <td>{{ object.nome }}</td>
+                    <td>{{ object.cliente.nome }}</td>
+                    <td>{{ object.produtos. }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Sem registros para listar</p>
+{% endif %}

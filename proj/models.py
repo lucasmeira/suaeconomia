@@ -7,7 +7,11 @@ class Cliente(models.Model):
     email = models.EmailField(verbose_name="E-mail")
     endereco = models.CharField(max_length=60, verbose_name="Endereço")
     senha = models.CharField(max_length=60, verbose_name="Senha")
-	
+
+    @property
+    def __str__(self):
+        return self.nome
+
 #class Empresa(models.Model):
 #	pass
 
@@ -16,12 +20,14 @@ class Produto(models.Model):
     descricao = models.CharField(max_length=60, verbose_name="Descrição")
     fabricante = models.CharField(max_length=60, verbose_name="Fabricante")
 
+    @property
     def __str__(self):
         return self.descricao + ' ' +  self.fabricante
 
 class Lista(models.Model):
     nome = models.CharField(max_length=40, verbose_name="Nome", default='Nome da Lista')
-    produto = models.ManyToManyField(Produto, related_name='lista+')
+    produtos = models.ManyToManyField(Produto, related_name='lista+')
+    cliente = models.ForeignKey(Cliente)
 
     @property
     def __str__(self):
@@ -29,13 +35,13 @@ class Lista(models.Model):
 
 
 #class Listagem(models.Model):
-	#lista
-	#produto
+#   lista
+#   produto
 #	pass
 	
 #class Listas(models.Model):
-	#lista
-	#cliente
+#	lista
+#	produto = models.ManyToManyField(Produto, related_name='lista+')
 #	pass
 	
 #class Cotacao(models.Model):
